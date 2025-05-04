@@ -35,29 +35,29 @@
         }
 
         header img {
-            height: 200px;
+            height: 175px;  /* Slightly reduced logo height */
             margin-bottom: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
 
         header img:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.75rem; /* Slightly reduced heading font size */
             margin: 0;
             font-weight: 800;
             color: var(--text-main);
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Slightly reduced tagline font size */
             color: var(--text-muted);
             margin-top: 0.5rem;
-            text-align: center; /* Center the tagline */
+            text-align: center;
         }
 
         nav {
@@ -96,13 +96,13 @@
         }
 
         .section {
-            padding: 5rem 1.5rem;
+            padding: 5rem 1.5rem; /* Reduced section padding back to original */
             max-width: 950px;
             margin: auto;
         }
 
         .section h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Reduced heading font size back to original */
             font-weight: 700;
             margin-bottom: 3rem;
             text-align: center;
@@ -110,29 +110,29 @@
         }
 
         .service, .about {
-            margin-bottom: 3rem;
-            padding: 2rem; /* Increased padding for service and about sections */
-            background-color: var(--bg-card);
-            border-radius: 12px; /* Slightly more rounded corners */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04); /* Slightly stronger shadow */
+            margin-bottom: 3.5rem; /* Slightly reduced margin bottom */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service:hover, .about:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Increased shadow on hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .service h3 {
-            font-size: 1.8rem; /* Increased font size for service titles */
+            font-size: 1.6rem; /* Reduced service title font size back to original */
             color: var(--accent-lighter);
             margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .service p, .about p {
-            font-size: 1.15rem; /* Increased font size for paragraphs */
-            color: var(--text-muted);
+            font-size: 1.1rem; /* Reduced paragraph font size back to original */
             line-height: 1.9;
+            max-width: 95%;
         }
 
         .about {
@@ -143,12 +143,12 @@
         }
 
         .about p {
-            max-width: 75%; /* Slightly wider text for the about section */
-            margin-bottom: 2rem; /* Increased margin bottom */
+            max-width: 80%;
+            margin-bottom: 2rem;
         }
 
         .cta {
-            padding: 4rem;
+            padding: 4rem; /* Reduced CTA padding back to original */
             text-align: center;
             border-radius: 12px;
             background-color: var(--bg-card);
@@ -157,42 +157,39 @@
         }
 
         .cta h2 {
-            font-size: 2.2rem; /* Increased font size for CTA title */
+            font-size: 2rem; /* Reduced CTA heading font size back to original */
             color: var(--text-main);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .cta p {
-            font-size: 1.2rem; /* Increased font size for CTA paragraph */
+            font-size: 1.15rem; /* Reduced CTA paragraph font size back to original */
         }
 
         .cta a {
             display: inline-block;
-            margin-top: 2rem; /* Increased margin top */
-            padding: 0.8rem 2.2rem; /* Slightly increased button padding */
-            font-size: 1.2rem;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem; /* Reduced button font size back to original */
             background-color: var(--accent);
             color: white;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 8px; /* Slightly less rounded button */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .cta a:hover {
             background-color: #212e3c;
-            transform: scale(1.04); /* Slight scale on hover */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+            transform: scale(1.04);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
         footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.95rem; /* Slightly increased font size */
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-light);
-            background: linear-gradient(to bottom, var(--bg-card), #f4f4f4);
+            padding: 2.5rem 1rem; /* Reduced footer padding back to original */
+            font-size: 0.9rem; /* Reduced footer font size back to original */
             margin-top: 5rem;
         }
 
@@ -211,20 +208,20 @@
         }
 
         header img {
-            border-radius: 12px;
+            border-radius: 10px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
-            transform: scale(1.02); /* Start slightly scaled up */
+            transform: scale(1.02);
         }
 
         header img:hover {
-            transform: scale(1.07);
+            transform: scale(1.06);
         }
 
         nav a {
             position: relative;
-            padding-bottom: 0.3rem;
-            font-size: 1.15rem; /* Increased font size for nav links */
+            padding-bottom: 0.25rem;
+            font-size: 1.1rem;
         }
 
         nav a::before {
@@ -233,7 +230,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 3px; /* Slightly thicker underline */
+            height: 2px;
             background-color: var(--accent);
             transform: scaleX(0);
             transform-origin: left;
@@ -245,82 +242,89 @@
         }
 
         .section {
-            padding: 6rem 1.5rem; /* Increased section padding */
+            padding: 4rem 1.5rem; /* Reduced section padding back to 4rem */
         }
 
         .section h2 {
-            font-size: 3rem; /* Increased heading font size */
-            margin-bottom: 3.5rem; /* Increased heading margin */
+            font-size: 2.2rem; /* Reduced heading font size back to 2.2rem */
+            margin-bottom: 3rem;
             letter-spacing: -0.02em;
         }
 
         .service, .about {
-            margin-bottom: 4rem; /* Increased margin bottom */
-            padding: 2.5rem; /* Further increased padding */
-            border-radius: 16px; /* Even more rounded corners */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            margin-bottom: 3rem; /* Reduced service/about margin-bottom back to 3rem */
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service:hover, .about:hover {
-            transform: translateY(-12px); /* Further increased lift */
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1); /* Even larger shadow */
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .service h3 {
-            font-size: 2rem; /* Increased service title font size */
+            font-size: 1.4rem; /* Reduced service title font size back to 1.4rem */
             color: var(--accent-lighter);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
         .service p, .about p {
-            font-size: 1.25rem; /* Increased paragraph font size */
-            line-height: 2; /* Slightly increased line height */
-            max-width: 95%; /* Wider paragraphs */
+            font-size: 1.1rem; /* Reduced paragraph font size back to 1.1rem */
+            line-height: 1.9;
+            max-width: 95%;
+        }
+
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .about p {
-            max-width: 85%;
-            margin-bottom: 2.5rem;
+            max-width: 80%;
+            margin-bottom: 2rem;
         }
 
         .cta {
-            padding: 5rem;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            margin-top: 5rem;
+            padding: 3rem; /* Reduced CTA padding back to 3rem */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-top: 4rem;
         }
 
         .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem; /* Reduced CTA heading font size back to 2rem */
+            margin-bottom: 1.2rem;
             letter-spacing: -0.02em;
         }
 
         .cta p {
-            font-size: 1.25rem;
+            font-size: 1.15rem; /* Reduced CTA paragraph font size back to 1.15rem */
         }
 
         .cta a {
-            margin-top: 2.5rem;
-            padding: 1rem 2.5rem;
-            font-size: 1.3rem;
-            border-radius: 10px;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .cta a:hover {
             background-color: #212e3c;
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transform: scale(1.04);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
         footer {
-            padding: 3.5rem 1rem;
-            font-size: 1rem;
-            margin-top: 6rem;
+            padding: 2.5rem 1rem; /* Reduced footer padding back to 2.5rem */
+            font-size: 0.9rem; /* Reduced footer font size back to 0.9rem */
+            margin-top: 5rem;
         }
 
         /* --- Responsive Adjustments --- */
@@ -331,11 +335,11 @@
             }
 
             header img {
-                height: 150px;
+                height: 120px;
             }
 
             header h1 {
-                font-size: 2.5rem;
+                font-size: 2.25rem; /* Slightly reduced mobile heading font size */
             }
 
             .tagline {
@@ -352,17 +356,17 @@
             }
 
             .section h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 margin-bottom: 2.5rem;
             }
 
             .service, .about {
-                padding: 1.5rem;
-                margin-bottom: 2.5rem;
+                padding: 1.25rem; /* Slightly reduced mobile service/about padding */
+                margin-bottom: 2rem; /* Slightly reduced mobile service/about margin */
             }
 
             .service h3 {
-                font-size: 1.4rem;
+                font-size: 1.2rem; /* Slightly reduced mobile service title font size */
             }
 
             .service p, .about p {
