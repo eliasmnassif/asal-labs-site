@@ -7,55 +7,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --background: #f4f6f8;
-      --foreground: #1e1e1e;
-      --muted: #666;
-      --accent: #a6c8ff;
-      --card: #ffffff;
+      --accent: #2c66e4;
+      --bg-light: #f9f9fb;
+      --bg-card: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #5a5a5a;
+      --border-light: #e2e2e2;
     }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--background);
-      color: var(--foreground);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      font-size: 17px;
       line-height: 1.8;
-      font-size: 18px;
     }
 
     header {
-      padding: 4rem 1.5rem 2rem;
       text-align: center;
-      background-color: var(--background);
+      padding: 3rem 1.5rem 2rem;
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-light);
     }
 
     header img {
-      height: 120px;
-      margin-bottom: 1.5rem;
+      height: 100px;
+      margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 800;
+      font-size: 2.6rem;
       margin: 0;
+      font-weight: 800;
     }
 
     .tagline {
-      font-size: 1.2rem;
-      color: var(--muted);
+      font-size: 1.1rem;
+      color: var(--text-muted);
       margin-top: 0.5rem;
     }
 
     nav {
       text-align: center;
-      padding: 1rem 0;
+      margin-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     nav a {
       margin: 0 1.2rem;
       text-decoration: none;
       font-weight: 600;
-      color: var(--muted);
+      color: var(--text-muted);
       transition: color 0.3s ease;
     }
 
@@ -64,94 +67,90 @@
     }
 
     .section {
-      padding: 5rem 1.5rem;
-      max-width: 900px;
+      padding: 4rem 1.5rem;
+      max-width: 950px;
       margin: auto;
     }
 
     .section h2 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 700;
+      margin-bottom: 2.5rem;
       text-align: center;
-      margin-bottom: 3rem;
-      color: var(--foreground);
+      color: var(--text-main);
     }
 
     .service, .about {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .service h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
+      font-size: 1.4rem;
       color: var(--accent);
+      margin-bottom: 0.4rem;
     }
 
-    .service p {
-      color: var(--muted);
-    }
-
-    .about p {
-      margin-bottom: 1.5rem;
-      color: var(--muted);
+    .service p, .about p {
+      color: var(--text-muted);
     }
 
     .cta {
+      background-color: var(--bg-card);
+      padding: 3rem;
       text-align: center;
-      background-color: var(--card);
-      padding: 3rem 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      max-width: 600px;
-      margin: 4rem auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-top: 4rem;
     }
 
     .cta h2 {
-      font-size: 2rem;
-      color: var(--foreground);
+      font-size: 1.8rem;
+      color: var(--text-main);
       margin-bottom: 0.8rem;
     }
 
     .cta p {
-      font-size: 1.1rem;
-      color: var(--muted);
+      font-size: 1.05rem;
+      color: var(--text-muted);
     }
 
     .cta a {
       display: inline-block;
       margin-top: 1.5rem;
-      padding: 0.75rem 1.75rem;
+      padding: 0.75rem 1.5rem;
       background-color: var(--accent);
-      color: #fff;
+      color: white;
       font-weight: 600;
-      border-radius: 30px;
       text-decoration: none;
+      border-radius: 6px;
       transition: background-color 0.3s ease;
     }
 
     .cta a:hover {
-      background-color: #91bdfd;
+      background-color: #244fcf;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      background-color: var(--bg-card);
+      margin-top: 4rem;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2.4rem;
-      }
-
-      .section h2 {
         font-size: 2rem;
       }
 
+      .section h2 {
+        font-size: 1.8rem;
+      }
+
       .service h3 {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
       }
     }
   </style>
@@ -200,7 +199,7 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="section cta">
     <h2>Let’s Work Together</h2>
     <p>Interested in working with ASAL Labs?</p>
     <a href="mailto:contact@asallabs.tech">Get in Touch</a>
