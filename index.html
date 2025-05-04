@@ -7,67 +7,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #3fb2f7;
-      --background: #0f1117;
-      --section-alt: #141a26;
+      --background: #f4f6f8;
+      --foreground: #1e1e1e;
+      --muted: #666;
+      --accent: #a6c8ff;
+      --card: #ffffff;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
+      font-family: 'Inter', sans-serif;
       background-color: var(--background);
-      color: #f2f2f2;
-      line-height: 1.6;
+      color: var(--foreground);
+      line-height: 1.8;
+      font-size: 18px;
     }
 
     header {
-      background-color: #1a1f2e;
-      color: #ffffff;
-      padding: 3rem 1.5rem;
+      padding: 4rem 1.5rem 2rem;
       text-align: center;
+      background-color: var(--background);
     }
 
     header img {
-      height: 130px;
-      margin-bottom: 1.2rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      height: 120px;
+      margin-bottom: 1.5rem;
     }
 
     header h1 {
-      margin: 0;
       font-size: 3rem;
       font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--accent);
-    }
-
-    header p {
-      margin-top: 1rem;
-      font-size: 1.3rem;
-      color: #bbbbbb;
+      margin: 0;
     }
 
     .tagline {
-      font-size: 1rem;
-      color: #888;
+      font-size: 1.2rem;
+      color: var(--muted);
       margin-top: 0.5rem;
     }
 
     nav {
-      background-color: #1c2436;
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
+      text-align: center;
+      padding: 1rem 0;
     }
 
     nav a {
-      color: #d4d4d4;
+      margin: 0 1.2rem;
       text-decoration: none;
-      margin: 0 1.5rem;
       font-weight: 600;
-      font-size: 1rem;
+      color: var(--muted);
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -75,71 +64,95 @@
     }
 
     .section {
-      padding: 4rem 1.5rem;
-      max-width: 1000px;
+      padding: 5rem 1.5rem;
+      max-width: 900px;
       margin: auto;
     }
 
-    .section:nth-child(even) {
-      background-color: var(--section-alt);
-    }
-
     .section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--foreground);
     }
 
     .service, .about {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .service h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
       color: var(--accent);
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    }
+
+    .service p {
+      color: var(--muted);
+    }
+
+    .about p {
+      margin-bottom: 1.5rem;
+      color: var(--muted);
     }
 
     .cta {
-      background-color: #1c2436;
-      padding: 3rem;
-      border-radius: 8px;
+      text-align: center;
+      background-color: var(--card);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       max-width: 600px;
       margin: 4rem auto;
-      text-align: center;
     }
 
     .cta h2 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      color: var(--foreground);
+      margin-bottom: 0.8rem;
     }
 
     .cta p {
-      color: #ccc;
+      font-size: 1.1rem;
+      color: var(--muted);
     }
 
     .cta a {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.75rem;
       background-color: var(--accent);
-      color: #0f1117;
-      font-weight: bold;
-      border-radius: 4px;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 30px;
       text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
     .cta a:hover {
-      opacity: 0.9;
+      background-color: #91bdfd;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #1a1f2e;
-      color: #888;
       font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .service h3 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
@@ -148,7 +161,6 @@
     <img src="logo.png" alt="ASAL Labs Logo" />
     <h1>ASAL Labs</h1>
     <p class="tagline">Autonomy Systems Advisory Lab</p>
-    <p>Independent Strategy & Advisory for Autonomy, AI, and Intelligent Infrastructure</p>
   </header>
 
   <nav>
