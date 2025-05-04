@@ -11,7 +11,7 @@
             --accent-lighter: #3e5568;
             --bg-light: #f9f9fb;
             --bg-card: #ffffff;
-            --text-main: #2c3e50;  /* Using dark blue-gray for main titles */
+            --text-main: #2c3e50;
             --text-muted: #5a5a5a;
             --border-light: #e2e2e2;
         }
@@ -43,7 +43,7 @@
             font-size: 3rem;
             margin: 0;
             font-weight: 800;
-            color: var(--text-main); /* Ensuring main title uses the defined color */
+            color: var(--text-main);
         }
 
         .tagline {
@@ -81,7 +81,7 @@
             font-weight: 700;
             margin-bottom: 3rem;
             text-align: center;
-            color: var(--text-main); /* Ensuring section title uses the defined color */
+            color: var(--text-main);
         }
 
         .service, .about {
@@ -136,7 +136,7 @@
 
         .cta h2 {
             font-size: 2rem;
-            color: var(--text-main);  /* Ensuring CTA title uses the defined color */
+            color: var(--text-main);
             margin-bottom: 0.8rem;
         }
 
@@ -171,87 +171,76 @@
             margin-top: 5rem;
         }
 
-        /* Media query for mobile (max-width: 600px) */
-        @media (max-width: 600px) {
-            header {
-                padding: 2rem 1rem;
-            }
+        /* --- New Styles --- */
 
-            header img {
-                height: 120px;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            nav a {
-                margin: 0 1rem;
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 3rem 1rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .service {
-                padding: 1rem;
-            }
-
-            .service h3 {
-                font-size: 1.4rem;
-            }
-
-            .service p {
-                font-size: 1rem;
-            }
-
-            .about p {
-                font-size: 1rem;
-                max-width: 95%;
-            }
-
-            .cta {
-                padding: 2.5rem;
-            }
-
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .cta p {
-                font-size: 1rem;
-            }
-
-            .cta a {
-                padding: 0.75rem 1.5rem;
-                font-size: 1.1rem;
-            }
-
-            footer {
-                padding: 2rem 1rem;
-            }
+        /* Add a subtle animation to the header */
+        header {
+            animation: fadeIn 1s ease, slideInDown 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
         }
 
-        /* Added for larger screens */
-        @media (min-width: 1200px) {
-            .section {
-                max-width: 1100px;
-            }
-
-            .about p {
-                max-width: 70%;
-            }
+        /* Style for the logo image */
+        header img {
+            border-radius: 10px; /* Give it rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Add a shadow */
+            transition: transform 0.3s ease; /* Add transition for hover effect */
         }
+
+        header img:hover {
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        /* Style for the navigation links */
+        nav a {
+            position: relative; /* For the underline animation */
+            padding-bottom: 0.25rem; /* Space for the underline */
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent); /* Underline color */
+            transform: scaleX(0); /* Start with 0 width */
+            transform-origin: left;
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover::before {
+            transform: scaleX(1); /* Expand underline on hover */
+        }
+
+        /* Improve service card hover effect */
+        .service:hover {
+            transform: translateY(-8px); /* Increased lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* Increased shadow on hover */
+        }
+
+        /* Add a subtle animation to the CTA button */
+        .cta a {
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.06); } /* Slightly larger on pulse */
+        }
+
+        /* Add a background gradient to the footer */
+        footer {
+            background: linear-gradient(to bottom, var(--bg-card), #f4f4f4); /* Subtle gradient */
+        }
+
+
     </style>
 </head>
 <body>
