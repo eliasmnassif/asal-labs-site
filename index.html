@@ -21,176 +21,17 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-main);
-            font-size: 17px;
-            line-height: 1.7; /* Slightly reduced line height */
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2.5rem 1.5rem 2rem; /* Reduced header padding */
+            padding: 2.5rem 1rem 2rem;
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border-light);
-        }
-
-        header img {
-            height: 150px;  /* Further reduced logo height */
-            margin-bottom: 1rem; /* Reduced logo margin bottom */
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        header img:hover {
-            transform: scale(1.05);
-        }
-
-        header h1 {
-            font-size: 2.5rem; /* Further reduced heading font size */
-            margin: 0;
-            font-weight: 800;
-            color: var(--text-main);
-        }
-
-        .tagline {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem; /* Further reduced tagline margin top */
-            text-align: center;
-        }
-
-        nav {
-            text-align: center;
-            margin-top: 1.5rem; /* Reduced nav margin top */
-            padding-bottom: 1rem;
-        }
-
-        nav a {
-            margin: 0 1rem; /* Reduced nav link margin */
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        nav a:hover::before {
-            transform: scaleX(1);
-        }
-
-        .section {
-            padding: 4rem 1.5rem; /* Reduced section padding */
-            max-width: 950px;
-            margin: auto;
-        }
-
-        .section h2 {
-            font-size: 2rem; /* Further reduced heading font size */
-            font-weight: 700;
-            margin-bottom: 2.5rem; /* Reduced heading margin bottom */
-            text-align: center;
-            color: var(--text-main);
-        }
-
-        .service, .about {
-            margin-bottom: 2.5rem; /* Further reduced margin bottom */
-            padding: 1.5rem; /* Reduced padding */
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service:hover, .about:hover {
-            transform: translateY(-6px); /* Reduced hover lift */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* Reduced hover shadow */
-        }
-
-        .service h3 {
-            font-size: 1.4rem; /* Reduced service title font size */
-            color: var(--accent-lighter);
-            margin-bottom: 0.8rem;
-            letter-spacing: -0.02em;
-        }
-
-        .service p, .about p {
-            font-size: 1rem;
-            line-height: 1.8; /* Reduced line height */
-            max-width: 95%;
-        }
-
-        .about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .about p {
-            max-width: 80%;
-            margin-bottom: 1.5rem; /* Reduced about paragraph margin bottom */
-        }
-
-        .cta {
-            padding: 2.5rem; /* Reduced CTA padding */
-            text-align: center;
-            border-radius: 12px;
-            background-color: var(--bg-card);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            margin-top: 3rem; /* Reduced CTA margin top */
-        }
-
-        .cta h2 {
-            font-size: 1.8rem; /* Reduced CTA heading font size */
-            color: var(--text-main);
-            margin-bottom: 1rem; /* Reduced CTA heading margin bottom */
-            letter-spacing: -0.02em;
-        }
-
-        .cta p {
-            font-size: 1rem;
-        }
-
-        .cta a {
-            margin-top: 1.5rem; /* Reduced CTA button margin top */
-            padding: 0.75rem 1.75rem; /* Reduced button padding */
-            font-size: 1.1rem; /* Reduced button font size */
-            border-radius: 6px; /* Less rounded button */
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Reduced button shadow */
-        }
-
-        .cta a:hover {
-            background-color: #212e3c;
-            transform: scale(1.03); /* Reduced hover scale */
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12); /* Reduced hover shadow */
-        }
-
-        footer {
-            padding: 2rem 1rem; /* Reduced footer padding */
-            font-size: 0.85rem; /* Reduced footer font size */
-            margin-top: 4rem; /* Reduced footer margin top */
-        }
-
-        /* --- New Styles --- */
-
-        header {
             animation: fadeIn 1s ease, slideInDown 0.5s ease;
         }
         @keyframes fadeIn {
@@ -203,20 +44,51 @@
         }
 
         header img {
-            border-radius: 8px; /* Less rounded logo corners */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Reduced logo shadow */
+            height: 150px;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
-            transform: scale(1.01); /* Start slightly scaled up */
+            transform: scale(1.02);
         }
 
         header img:hover {
-            transform: scale(1.04); /* Reduced hover scale */
+            transform: scale(1.07);
+        }
+
+        header h1 {
+            font-size: 2.75rem;
+            margin: 0;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-bottom: 0.75rem;
         }
 
         nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
             position: relative;
-            padding-bottom: 0.2rem; /* Reduced nav link padding bottom */
-            font-size: 1rem;
+            padding-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
         }
 
         nav a::before {
@@ -225,7 +97,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color: var(--accent);
             transform: scaleX(0);
             transform-origin: left;
@@ -237,157 +109,182 @@
         }
 
         .section {
-            padding: 3rem 1.5rem; /* Further reduced section padding */
+            padding: 4rem 1.5rem;
+            max-width: 950px;
+            margin: auto;
         }
 
         .section h2 {
-            font-size: 1.8rem; /* Further reduced heading font size */
-            margin-bottom: 2rem; /* Further reduced heading margin bottom */
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--text-main);
             letter-spacing: -0.02em;
         }
 
         .service, .about {
-            margin-bottom: 2.5rem; /* Further reduced service/about margin bottom */
-            padding: 1.25rem; /* Further reduced service/about padding */
-            border-radius: 10px; /* Less rounded service/about corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02); /* Reduced service/about shadow */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service:hover, .about:hover {
-            transform: translateY(-4px); /* Further reduced hover lift */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04); /* Further reduced hover shadow */
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .service h3 {
-            font-size: 1.2rem; /* Further reduced service title font size */
+            font-size: 1.6rem;
             color: var(--accent-lighter);
-            margin-bottom: 0.6rem; /* Further reduced service title margin bottom */
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
         .service p, .about p {
-            font-size: 0.95rem; /* Further reduced paragraph font size */
-            line-height: 1.7;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
             max-width: 95%;
+        }
+
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .about p {
             max-width: 80%;
-            margin-bottom: 1.5rem; /* Further reduced about paragraph margin bottom */
+            margin-bottom: 2rem;
         }
 
         .cta {
-            padding: 2.5rem; /* Further reduced CTA padding */
-            border-radius: 10px; /* Less rounded CTA */
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Reduced CTA shadow */
-            margin-top: 3rem;
+            padding: 4rem;
+            text-align: center;
+            border-radius: 12px;
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-top: 4rem;
         }
 
         .cta h2 {
-            font-size: 1.5rem; /* Further reduced CTA heading font size */
-            margin-bottom: 1rem; /* Further reduced CTA heading margin bottom */
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
             letter-spacing: -0.02em;
         }
 
         .cta p {
-            font-size: 0.95rem; /* Further reduced CTA paragraph font size */
+            font-size: 1.15rem;
         }
 
         .cta a {
-            margin-top: 1.5rem; /* Further reduced CTA button margin top */
-            padding: 0.7rem 1.5rem; /* Further reduced button padding */
-            font-size: 1rem; /* Further reduced button font size */
-            border-radius: 6px; /* Less rounded button */
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Further reduced button shadow */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.06); }
         }
 
         .cta a:hover {
             background-color: #212e3c;
-            transform: scale(1.02); /* Further reduced hover scale */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Further reduced hover shadow */
+            transform: scale(1.04);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
         footer {
-            padding: 1.5rem 1rem; /* Further reduced footer padding */
-            font-size: 0.8rem; /* Further reduced footer font size */
-            margin-top: 4rem;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+            background: linear-gradient(to bottom, var(--bg-card), #f4f4f4);
+            margin-top: 5rem;
         }
 
         /* --- Responsive Adjustments --- */
 
         @media (max-width: 600px) {
             header {
-                padding: 1.5rem 1rem; /* Further reduced mobile header padding */
+                padding: 2rem 1rem;
             }
 
             header img {
-                height: 100px;
+                height: 120px;
             }
 
             header h1 {
-                font-size: 2rem; /* Further reduced mobile heading font size */
+                font-size: 2.25rem;
             }
 
             .tagline {
-                font-size: 0.9rem; /* Further reduced mobile tagline font size */
+                font-size: 1rem;
             }
 
             nav a {
-                margin: 0 0.75rem; /* Further reduced mobile nav link margin */
-                font-size: 0.9rem; /* Further reduced mobile nav link font size */
+                margin: 0 1rem;
+                font-size: 1rem;
             }
 
             .section {
-                padding: 2.5rem 1rem; /* Further reduced mobile section padding */
+                padding: 3rem 1rem;
             }
 
             .section h2 {
-                font-size: 1.5rem; /* Further reduced mobile heading font size */
-                margin-bottom: 2rem; /* Further reduced mobile heading margin bottom */
+                font-size: 1.8rem;
+                margin-bottom: 2.5rem;
             }
 
             .service, .about {
-                padding: 1rem; /* Further reduced mobile service/about padding */
-                margin-bottom: 1.5rem; /* Further reduced mobile service/about margin bottom */
+                padding: 1.5rem;
+                margin-bottom: 2.5rem;
             }
 
             .service h3 {
-                font-size: 1.1rem; /* Further reduced mobile service title font size */
+                font-size: 1.4rem;
             }
 
             .service p, .about p {
-                font-size: 0.9rem; /* Further reduced mobile paragraph font size */
-                line-height: 1.7;
+                font-size: 1rem;
+                line-height: 1.8;
                 max-width: 95%;
             }
 
             .about p {
                 max-width: 95%;
-                margin-bottom: 1.5rem; /* Further reduced mobile about paragraph margin bottom */
+                margin-bottom: 2rem;
             }
 
             .cta {
-                padding: 2rem; /* Further reduced mobile CTA padding */
+                padding: 2.5rem;
             }
 
             .cta h2 {
-                font-size: 1.5rem; /* Further reduced mobile CTA heading font size */
+                font-size: 1.8rem;
             }
 
             .cta p {
-                font-size: 0.95rem; /* Further reduced mobile CTA paragraph font size */
+                font-size: 1rem;
             }
 
             .cta a {
-                padding: 0.7rem 1.25rem; /* Further reduced mobile button padding */
-                font-size: 1rem; /* Further reduced mobile button font size */
+                padding: 0.75rem 1.5rem;
+                font-size: 1.1rem;
             }
 
             footer {
-                padding: 1.5rem 1rem; /* Further reduced mobile footer padding */
-                font-size: 0.8rem; /* Further reduced mobile footer font size */
+                padding: 2rem 1rem;
             }
         }
     </style>
