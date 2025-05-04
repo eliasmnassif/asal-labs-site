@@ -1,318 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASAL Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #2c3e50;
-      --accent-lighter: #3498db;
-      --bg-light: #f9f9fb;
-      --bg-card: #ffffff;
-      --text-main: #1a1a1a;
-      --text-muted: #5a5a5a;
-      --border-light: #e2e2e2;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASAL Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2c3e50; /* Dark blue-gray (remains as main accent) */
+            --accent-lighter: #3e5568;  /* A tiny bit lighter than previous */
+            --bg-light: #f9f9fb;
+            --bg-card: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #5a5a5a;
+            --border-light: #e2e2e2;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      font-size: 17px;
-      line-height: 1.8;
-    }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-size: 17px;
+            line-height: 1.8;
+        }
 
-    header {
-      background-color: var(--bg-card);
-      border-bottom: 1px solid var(--border-light);
-      padding: 3rem 1.5rem 2rem;
-    }
+        header {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-light);
+        }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      text-align: left;
-    }
+        header img {
+            height: 100px;
+            margin-bottom: 1rem;
+        }
 
-    .logo-container img {
-      height: 80px;
-      margin-bottom: 0;
-    }
+        header h1 {
+            font-size: 2.6rem;
+            margin: 0;
+            font-weight: 800;
+        }
 
-    .logo-container h1 {
-      font-size: 2.6rem;
-      margin: 0;
-      font-weight: 800;
-    }
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
 
-    .logo-container .tagline {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+        }
 
-    nav {
-      text-align: center;
-      margin-top: 2rem;
-      padding-bottom: 1rem;
-    }
+        nav a {
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
 
-    nav a {
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      transition: color 0.3s ease;
-    }
+        nav a:hover {
+            color: var(--accent);
+        }
 
-    nav a:hover {
-      color: var(--accent);
-    }
+        .section {
+            padding: 4rem 1.5rem;
+            max-width: 950px;
+            margin: auto;
+        }
 
-    .section {
-      padding: 5rem 1.5rem;
-      max-width: 950px;
-      margin: auto;
-    }
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--text-main);
+        }
 
-    .section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-      text-align: center;
-      color: var(--text-main);
-    }
+        .service, .about {
+            margin-bottom: 2.5rem;
+        }
 
-    .service {
-      margin-bottom: 3rem;
-      padding: 1.5rem;
-      background-color: var(--bg-card);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+        .service h3 {
+            font-size: 1.4rem;
+            color: var(--accent-lighter); /* A tiny bit lighter */
+            margin-bottom: 0.4rem;
+        }
 
-    .service:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
-    }
+        .service p, .about p {
+            color: var(--text-muted);
+        }
 
-    .service h3 {
-      font-size: 1.6rem;
-      color: var(--accent-lighter);
-      margin-bottom: 0.8rem;
-    }
+        .cta {
+            background-color: var(--bg-card);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-top: 4rem;
+        }
 
-    .service p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.9;
-    }
+        .cta h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
 
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+        .cta p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
 
-    .about p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.9;
-      max-width: 80%;
-      margin-bottom: 1.5rem;
-    }
+        .cta a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
 
-    .cta {
-      background-color: var(--bg-card);
-      padding: 4rem;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-      margin-top: 4rem;
-    }
+        .cta a:hover {
+            background-color: #212e3c; /* Darker hover for the dark blue-gray */
+        }
 
-    .cta h2 {
-      font-size: 2rem;
-      color: var(--text-main);
-      margin-bottom: 0.8rem;
-    }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+            background-color: var(--bg-card);
+            margin-top: 4rem;
+        }
 
-    .cta p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-    }
+        /* Improved Styles (Add these to your <style> section) */
+        header {
+            display: flex; /* Use Flexbox for layout */
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
 
-    .cta a {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 2rem;
-      background-color: var(--accent);
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 1.2rem;
-      transition: background-color 0.3s ease;
-    }
+        header img {
+            height: 120px; /* Slightly larger logo */
+            margin-bottom: 1.5rem;
+        }
 
-    .cta a:hover {
-      background-color: #212e3c;
-    }
+        header h1 {
+            font-size: 3rem; /* Larger heading */
+        }
 
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-light);
-      background-color: var(--bg-card);
-      margin-top: 5rem;
-    }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
 
-    @media (max-width: 600px) {
-      .logo-container {
-        flex-direction: column;
-        text-align: center;
-      }
+        nav {
+            margin-top: 2rem; /* Increased margin */
+        }
 
-      .logo-container img {
-        height: 100px;
-      }
+        nav a {
+            margin: 0 1.5rem; /* Increased margin */
+            font-size: 1.1rem; /* Slightly larger font */
+        }
 
-      .logo-container h1 {
-        font-size: 2.5rem;
-      }
+        .section {
+            padding: 5rem 1.5rem; /* Increased padding */
+        }
 
-      nav a {
-        margin: 0 1rem;
-        font-size: 1rem;
-      }
+        .section h2 {
+            font-size: 2.5rem; /* Larger heading */
+            margin-bottom: 3rem;
+        }
 
-      .section {
-        padding: 3rem 1rem;
-      }
+        .service {
+            margin-bottom: 3rem; /* Increased margin */
+            padding: 1.5rem;
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02); /* Subtle shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+        }
 
-      .section h2 {
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
-      }
+        .service:hover {
+            transform: translateY(-4px); /* Slight lift on hover */
+            box_shadow: 0 6px 15px rgba(0, 0, 0, 0.04); /* Increased shadow on hover*/
+        }
 
-      .service {
-        padding: 1rem;
-      }
+        .service h3 {
+            font-size: 1.6rem; /* Larger heading */
+            color: var(--accent-lighter); /* A tiny bit lighter */
+            margin-bottom: 0.8rem;
+        }
 
-      .service h3 {
-        font-size: 1.4rem;
-      }
+        .service p {
+            font-size: 1.1rem; /* Slightly larger font */
+            color: var(--text-muted);
+            line-height: 1.9; /* Improved line height */
+        }
 
-      .service p {
-        font-size: 1rem;
-      }
+        .about {
+            display: flex; /* Use Flexbox for layout */
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            text-align: center;
+        }
 
-      .about p {
-        font-size: 1rem;
-        max-width: 95%;
-      }
+        .about p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 80%; /* Limit the width of the paragraph for better readability */
+            margin-bottom: 1.5rem;
+        }
 
-      .cta {
-        padding: 2.5rem;
-      }
+        .cta {
+            padding: 4rem; /* Increased padding */
+        }
 
-      .cta h2 {
-        font-size: 1.8rem;
-      }
+        .cta h2 {
+            font-size: 2rem; /* Larger heading */
+        }
 
-      .cta p {
-        font-size: 1rem;
-      }
+        .cta p {
+            font-size: 1.15rem; /* Slightly larger font */
+        }
 
-      .cta a {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.1rem;
-      }
+        .cta a {
+            padding: 0.8rem 2rem; /* Slightly larger button */
+            font-size: 1.2rem; /* Larger font */
+            background-color: var(--accent); /* Dark blue-gray */
+        }
 
-      footer {
-        padding: 2rem 1rem;
-      }
-    }
+        .cta a:hover {
+            background-color: #212e3c; /* Darker hover for the dark blue-gray */
+        }
 
-    @media (min-width: 1200px) {
-      .section {
-        max-width: 1100px;
-      }
+        footer {
+            margin-top: 5rem;
+            padding: 2.5rem 1rem;
+        }
 
-      .about p {
-        max-width: 70%;
-      }
-    }
-  </style>
+        /* Media query for mobile (max-width: 600px) */
+        @media (max-width: 600px) {
+            header {
+                padding: 2rem 1rem;
+            }
+
+            header img {
+                height: 100px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .service {
+                padding: 1rem;
+            }
+
+            .service h3 {
+                font-size: 1.4rem;
+            }
+
+            .service p {
+                font-size: 1rem;
+            }
+
+            .about p {
+                font-size: 1rem;
+                max-width: 95%;
+            }
+
+            .cta {
+                padding: 2.5rem;
+            }
+
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+            }
+
+            .cta a {
+                padding: 0.75rem 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Added for larger screens */
+        @media (min-width: 1200px) {
+            .section {
+                max-width: 1100px; /* Wider for larger screens */
+            }
+
+            .about p{
+               max-width: 70%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="logo-v3.png" alt="ASAL Labs Logo" />
-      <div>
+    <header>
+        <img src="logo-v3.png" alt="ASAL Labs Logo" />
         <h1>ASAL Labs</h1>
         <p class="tagline">Autonomy Systems Advisory Lab</p>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">Who We Are</a>
-  </nav>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">Who We Are</a>
+    </nav>
 
-  <section class="section" id="services">
-    <h2>What We Do</h2>
+    <section class="section" id="services">
+        <h2>What We Do</h2>
 
-    <div class="service">
-      <h3>Autonomy System Architecture & Deployment Strategy</h3>
-      <p>We guide clients through the design and deployment of scalable autonomy platforms — ensuring safety, modularity, and long-term sustainability from the ground up.</p>
-    </div>
+        <div class="service">
+            <h3>Autonomy System Architecture & Deployment Strategy</h3>
+            <p>We guide clients through the design and deployment of scalable autonomy platforms — ensuring safety, modularity, and long-term sustainability from the ground up.</p>
+        </div>
 
-    <div class="service">
-      <h3>Validation Frameworks for AI & Robotics</h3>
-      <p>We design independent validation strategies tailored to perception, planning, and control systems — enabling regulatory alignment, robust testing, and operational confidence.</p>
-    </div>
+        <div class="service">
+            <h3>Validation Frameworks for AI & Robotics</h3>
+            <p>We design independent validation strategies tailored to perception, planning, and control systems — enabling regulatory alignment, robust testing, and operational confidence.</p>
+        </div>
 
-    <div class="service">
-      <h3>Digital Twin Oversight & Real-Time Monitoring</h3>
-      <p>We help define the role of digital twins and live dashboards in infrastructure and mobility operations — ensuring insight, traceability, and performance assurance at scale.</p>
-    </div>
+        <div class="service">
+            <h3>Digital Twin Oversight & Real-Time Monitoring</h3>
+            <p>We help define the role of digital twins and live dashboards in infrastructure and mobility operations — ensuring insight, traceability, and performance assurance at scale.</p>
+        </div>
 
-    <div class="service">
-      <h3>Policy Advisory & RFP Support for Emerging Tech</h3>
-      <p>We support public and private actors with technical input into policy, regulation, and procurement — bridging the gap between system design and institutional adoption.</p>
-    </div>
-  </section>
+        <div class="service">
+            <h3>Policy Advisory & RFP Support for Emerging Tech</h3>
+            <p>We support public and private actors with technical input into policy, regulation, and procurement — bridging the gap between system design and institutional adoption.</p>
+        </div>
+    </section>
 
-  <section class="section" id="about">
-    <h2>Who We Are</h2>
-    <div class="about">
-      <p>ASAL Labs is a London-based advisory group focused on autonomy systems, AI validation, and intelligent infrastructure. We combine systems thinking with real-world expertise to deliver strategic clarity for emerging technologies.</p>
-      <p>Founded by engineers and strategists, ASAL Labs advises clients from first principles — offering practical, vendor-neutral guidance to help public and private partners deliver autonomy at scale.</p>
-      <p>We are passionate about shaping the future of autonomy.</p>
-    </div>
-  </section>
+    <section class="section" id="about">
+        <h2>Who We Are</h2>
+        <div class="about">
+            <p>ASAL Labs is a London-based advisory group focused on autonomy systems, AI validation, and intelligent infrastructure. We combine systems thinking with real-world expertise to deliver strategic clarity for emerging technologies.</p>
+            <p>Founded by engineers and strategists, ASAL Labs advises clients from first principles — offering practical, vendor-neutral guidance to help public and private partners deliver autonomy at scale.</p>
+             <p>We are passionate about shaping the future of autonomy.</p> </div>
+    </section>
 
-  <section class="section cta">
-    <h2>Let’s Work Together</h2>
-    <p>Interested in working with ASAL Labs?</p>
-    <a href="mailto:contact@asallabs.tech">Get in Touch</a>
-  </section>
+    <section class="section cta">
+        <h2>Let’s Work Together</h2>
+        <p>Interested in working with ASAL Labs?</p>
+        <a href="mailto:contact@asallabs.tech">Get in Touch</a>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 ASAL Labs. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 ASAL Labs. All rights reserved.</p>
+    </footer>
 </body>
 </html>
