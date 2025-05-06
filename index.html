@@ -3,153 +3,227 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASAL Labs</title>
-    <link rel="icon" type="image/png" href="Logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>ASAL Labs - Visually Enhanced</title>
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/1A5276/FFFFFF?text=A" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables for Theming */
         :root {
-            --accent: #2c3e50;
-            --accent-lighter: #455a64;
-            --bg-light: #f9f9fb;
-            --bg-card: #ffffff;
-            --text-main: #2c3e50;
-            --text-muted: #5a5a5a;
-            --border-light: #e2e2e2;
+            --primary-accent: #1A5276; /* Slightly deeper, more corporate blue */
+            --secondary-accent: #5DADE2; /* A lighter, vibrant blue for highlights/CTA */
+            --bg-main: #F4F6F6; /* Slightly off-white, softer than pure white */
+            --bg-card: #FFFFFF;
+            --text-dark: #212F3D; /* Darker for main text, good contrast */
+            --text-light: #566573; /* For muted text, still readable */
+            --border-color: #D5DBDB;
+            --shadow-color: rgba(44, 62, 80, 0.15); /* Softer shadow color */
+            /* Updated focus ring to a brighter version of the secondary accent blue */
+            --focus-ring: #7CC5F0; /* Brighter blue for better focus visibility and palette cohesion */
         }
 
+        /* Smooth scrolling behavior for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Basic body styling */
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
+            background-color: var(--bg-main);
+            color: var(--text-dark);
             font-size: 16px;
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased; /* For smoother fonts on WebKit browsers */
+            -moz-osx-font-smoothing: grayscale; /* For smoother fonts on Firefox */
         }
 
+        /* --- Header Visuals --- */
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem 1.5rem;
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border-light);
-            animation: fadeIn 1s ease, slideInDown 0.5s ease;
+            padding: 2.5rem 1rem 2rem; /* Increased padding for better spacing */
+            background: linear-gradient(135deg, var(--primary-accent) 0%, #2471A3 100%); /* Subtle gradient background */
+            color: var(--bg-card); /* White text on dark header for contrast */
+            border-bottom: 3px solid var(--secondary-accent); /* Accent border */
+            animation: fadeIn 0.8s ease-out, slideInDownHeader 0.7s ease-out; /* Entrance animations */
         }
+
+        /* Keyframe animation for fade-in effect */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideInDown {
-            from { transform: translateY(-50px); }
-            to { transform: translateY(0); }
+
+        /* Keyframe animation for slide-in effect for the header */
+        @keyframes slideInDownHeader {
+            from { transform: translateY(-40px); opacity: 0;}
+            to { transform: translateY(0); opacity: 1;}
         }
 
+        /* Styling for the logo image in the header */
         header img {
-            height: 120px;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            transform: scale(1.01);
+            height: 110px;
+            margin-bottom: 1.25rem;
+            border-radius: 50%; /* Circular logo for a modern touch */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow for logo */
+            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother ease for transform */
+            border: 3px solid var(--bg-card); /* White border around logo */
         }
 
-        header img:hover {
-            transform: scale(1.04);
+        /* Hover and focus states for the logo */
+        header img:hover, header img:focus-visible {
+            transform: scale(1.08) rotate(5deg); /* Playful hover effect */
+            outline: 2px solid var(--focus-ring); /* Focus indicator for accessibility */
+            outline-offset: 3px;
         }
 
+        /* Styling for the main heading (H1) in the header */
         header h1 {
-            font-size: 2.25rem;
+            font-size: 2.75rem; /* Larger H1 for emphasis */
             margin: 0;
             font-weight: 800;
-            color: var(--text-main);
+            color: var(--bg-card); /* Ensure contrast against header background */
+            letter-spacing: -0.03em; /* Tighter letter spacing for large headings */
         }
 
+        /* Styling for the tagline in the header */
         .tagline {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
+            font-size: 1rem; /* Slightly larger tagline */
+            color: rgba(255, 255, 255, 0.85); /* Lighter, but still readable on header */
+            margin-top: 0.5rem;
             text-align: center;
+            font-weight: 400;
         }
 
+        /* --- Navigation Visuals --- */
         nav {
             text-align: center;
-            margin-top: 1rem;
-            padding-bottom: 0.75rem;
+            padding: 1rem 0; /* More vertical padding */
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 10px var(--shadow-color); /* Subtle shadow for depth */
+            position: sticky; /* Makes the navigation bar stick to the top on scroll */
+            top: 0;
+            z-index: 1000; /* Ensures nav stays above other content */
         }
 
+        /* Styling for navigation links */
         nav a {
-            margin: 0 0.75rem;
+            margin: 0 1rem; /* More spacing between links */
             text-decoration: none;
-            font-weight: 600;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-            position: relative;
-            padding-bottom: 0.2rem;
-            font-size: 1rem;
+            font-weight: 600; /* Bolder nav links */
+            color: var(--text-light);
+            transition: color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+            position: relative; /* For positioning the ::before pseudo-element */
+            padding: 0.5rem 0.25rem; /* Slightly more padding for touch targets */
+            font-size: 1.05rem; /* Slightly larger nav font */
+            border-radius: 4px; /* For focus outline styling */
         }
 
-        nav a:hover {
-            color: var(--accent);
+        /* Hover and focus states for navigation links */
+        nav a:hover, nav a:focus-visible {
+            color: var(--secondary-accent);
+            transform: translateY(-2px); /* Slight lift on hover */
+            outline: none; /* Remove default outline, custom one applied for focus-visible */
+        }
+        nav a:focus-visible {
+            outline: 2px solid var(--focus-ring); /* Custom focus outline */
+            outline-offset: 2px;
         }
 
+        /* Decorative underline effect for navigation links */
         nav a::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            bottom: -2px; /* Position it slightly below the text */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0; /* Starts with no width, animates on hover */
             height: 2px;
-            background-color: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+            background-color: var(--secondary-accent);
+            transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth width transition */
         }
 
-        nav a:hover::before {
-            transform: scaleX(1);
+        /* Underline effect on hover or when the link is active */
+        nav a:hover::before, nav a.active::before { /* .active class can be added via JS */
+            width: 70%; /* Underline doesn't span full width, for a more elegant look */
         }
 
+        /* --- Section & Card Visuals --- */
         .section {
-            padding: 3rem 1rem;
-            max-width: 950px;
-            margin: auto;
+            padding: 3.5rem 1.5rem; /* Increased padding for sections */
+            max-width: 900px; /* Slightly narrower for better line length and readability */
+            margin: auto; /* Center sections on the page */
         }
 
+        /* Styling for section headings (H2) */
         .section h2 {
-            font-size: 1.8rem;
+            font-size: 2rem; /* Larger section titles */
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem; /* More space after title */
             text-align: center;
-            color: var(--text-main);
+            color: var(--primary-accent); /* Use primary accent for section titles */
             letter-spacing: -0.02em;
+            position: relative; /* For positioning the ::after pseudo-element */
+            padding-bottom: 0.75rem; /* Space for the decorative underline */
         }
 
+        /* Decorative underline for section titles */
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px; /* Width of the underline */
+            height: 3px; /* Thickness of the underline */
+            background-color: var(--secondary-accent);
+            border-radius: 2px;
+        }
+
+        /* Styling for service and about cards */
         .service, .about {
-            margin-bottom: 2.5rem;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 2rem;
+            padding: 2rem; /* More padding inside cards */
+            border-radius: 12px; /* More rounded corners */
+            background-color: var(--bg-card);
+            box-shadow: 0 6px 20px var(--shadow-color); /* Softer, more diffused shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease; /* Smooth transitions */
+            border-left: 4px solid transparent; /* Transparent border initially, for hover accent */
         }
 
-        .service:hover, .about:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+        /* Hover and focus-within states for cards */
+        .service:hover, .about:hover,
+        .service:focus-within, .about:focus-within { /* focus-within applies when an element inside is focused */
+            transform: translateY(-8px); /* More lift on interaction */
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2); /* Stronger shadow on interaction */
+            border-left-color: var(--secondary-accent); /* Accent border on hover/focus */
         }
 
+        /* Styling for card titles (H3) */
         .service h3 {
-            font-size: 1.2rem;
-            color: var(--accent-lighter);
-            margin-bottom: 0.6rem;
-            letter-spacing: -0.02em;
+            font-size: 1.35rem; /* Larger card titles */
+            color: var(--primary-accent);
+            margin-top:0; /* Remove default top margin */
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+            font-weight: 600;
         }
 
+        /* Styling for paragraph text within cards */
         .service p, .about p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            max-width: 95%;
+            font-size: 0.98rem; /* Slightly larger card text */
+            line-height: 1.75;
+            color: var(--text-light);
+            margin-bottom: 1rem; /* Consistent bottom margin */
+        }
+        .service p:last-child, .about p:last-child {
+            margin-bottom: 0; /* Remove bottom margin from the last paragraph in a card */
         }
 
+
+        /* Specific styling for the 'about' card layout */
         .about {
             display: flex;
             flex-direction: column;
@@ -158,133 +232,119 @@
         }
 
         .about p {
-            max-width: 80%;
+            max-width: 80%; /* Constrain line length for readability */
             margin-bottom: 1.5rem;
         }
 
-        .cta {
-            padding: 2.5rem;
+        /* --- Call to Action (CTA) Visuals --- */
+        .cta { /* This is also a .section, inheriting its padding and max-width */
+            padding-top: 3.5rem; /* Overriding section padding if needed */
+            padding-bottom: 3.5rem;
             text-align: center;
-            border-radius: 10px;
-            background-color: var(--bg-card);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-            margin-top: 2.5rem;
+            border-radius: 12px; /* Match card radius */
+            background: var(--primary-accent); /* Using the primary accent for strong visual call-out */
+            color: var(--bg-card); /* White text for contrast */
+            margin-top: 3rem;
+            box-shadow: 0 8px 25px rgba(26, 82, 118, 0.3); /* Shadow matching background color */
         }
 
+        /* CTA heading styling */
         .cta h2 {
-            font-size: 1.5rem;
-            color: var(--text-main);
+            font-size: 1.9rem; /* Prominent CTA title */
+            color: var(--bg-card); /* Ensure contrast */
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+        }
+        /* CTA also gets the decorative underline, but in white */
+        .cta h2::after {
+            background-color: var(--bg-card);
+            opacity: 0.8;
         }
 
+        /* CTA paragraph styling */
         .cta p {
-            font-size: 0.95rem;
-            text-align: center;
+            font-size: 1.05rem; /* Clearer CTA description */
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem; /* More space before button */
+            max-width: 700px; /* Control line length for readability */
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* CTA button styling */
         .cta a {
-            margin-top: 1.5rem;
-            padding: 0.7rem 1.25rem;
-            font-size: 1rem;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: inline-block; /* Allows padding and margin, behaves like a button */
+            padding: 0.9rem 2.25rem; /* Larger button padding */
+            font-size: 1.1rem; /* Larger button text */
+            font-weight: 600;
+            border-radius: 8px; /* Rounded button */
+            text-decoration: none;
+            color: var(--primary-accent);
+            background-color: var(--bg-card); /* White button on dark background */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        .cta a:hover {
-            background-color: #212e3c;
-            transform: scale(1.02);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Hover and focus states for the CTA button */
+        .cta a:hover, .cta a:focus-visible {
+            background-color: var(--secondary-accent); /* Vibrant hover color */
+            color: var(--bg-card);
+            transform: translateY(-3px) scale(1.03); /* Lift and slight scale effect */
+            box-shadow: 0 6px 20px rgba(93, 173, 226, 0.4); /* Shadow reflecting hover color */
+            outline: 2px solid var(--focus-ring); /* Custom focus outline */
+            outline-offset: 2px;
         }
 
+        /* --- Footer Visuals --- */
         footer {
             text-align: center;
-            padding: 1rem;
-            font-size: 0.75rem;
+            padding: 2.5rem 1rem; /* More padding */
+            font-size: 0.85rem; /* Slightly larger footer text */
+            color: var(--text-light);
             margin-top: 4rem;
+            background-color: #EAECEE; /* Slightly different background for footer distinction */
+            border-top: 1px solid var(--border-color); /* Subtle separator line */
         }
 
         /* --- Responsive Adjustments --- */
+        /* For tablets and larger phones */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.25rem; }
+            .tagline { font-size: 0.95rem; }
+            .section h2 { font-size: 1.75rem; }
+            .service h3 { font-size: 1.25rem; }
+            .cta h2 { font-size: 1.7rem; }
+            .cta a { padding: 0.8rem 2rem; font-size: 1rem; }
+        }
 
+        /* For smaller mobile devices */
         @media (max-width: 600px) {
-            header {
-                padding: 1rem 0.75rem;
-            }
+            header { padding: 2rem 1rem 1.5rem; }
+            header img { height: 90px; }
+            header h1 { font-size: 2rem; }
+            .tagline { font-size: 0.9rem; }
 
-            header img {
-                height: 100px;
-            }
+            nav a { margin: 0 0.6rem; font-size: 1rem;}
 
-            header h1 {
-                font-size: 1.75rem;
-            }
+            .section { padding: 2.5rem 1rem; }
+            .section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
+            .section h2::after { width: 50px; height: 2px; } /* Adjust underline for smaller titles */
 
-            .tagline {
-                font-size: 0.8rem;
-            }
+            .service, .about { padding: 1.5rem; margin-bottom: 1.5rem; }
+            .service h3 { font-size: 1.15rem; }
+            .service p, .about p { font-size: 0.95rem; }
 
-            nav a {
-                margin: 0 0.5rem;
-                font-size: 0.9rem;
-            }
+            .cta { padding: 2.5rem 1.5rem; }
+            .cta h2 { font-size: 1.6rem; }
+            .cta p { font-size: 1rem; }
+            .cta a { padding: 0.8rem 1.75rem; font-size: 1rem; }
 
-            .section {
-                padding: 2.5rem 0.75rem;
-            }
-
-            .section h2 {
-                font-size: 1.25rem;
-                margin-bottom: 2rem;
-            }
-
-            .service, .about {
-                padding: 0.75rem;
-                margin-bottom: 1rem;
-            }
-
-            .service h3 {
-                font-size: 1rem;
-            }
-
-            .service p, .about p {
-                font-size: 0.85rem;
-                line-height: 1.6;
-                max-width: 95%;
-            }
-
-            .about p {
-                max-width: 95%;
-                margin-bottom: 1rem;
-            }
-
-            .cta {
-                padding: 1.5rem;
-            }
-
-            .cta h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta p {
-                font-size: 0.9rem;
-            }
-
-            .cta a {
-                padding: 0.6rem 1rem;
-                font-size: 1rem;
-            }
-
-            footer {
-                padding: 1rem 0.75rem;
-                font-size: 0.7rem;
-            }
+            footer { padding: 2rem 1rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Logo.png" alt="ASAL Labs Logo" />
+        <img src="https://placehold.co/110x110/FFFFFF/1A5276?text=ASAL" alt="ASAL Labs Logo" />
         <h1>ASAL Labs</h1>
         <p class="tagline">Autonomy Systems Advisory Labs</p>
     </header>
@@ -292,46 +352,49 @@
     <nav>
         <a href="#services">Services</a>
         <a href="#about">Who We Are</a>
+        <a href="#contact-cta">Contact</a>
     </nav>
 
-    <section class="section" id="services">
-        <h2>What We Do</h2>
-        <div class="service">
-           <h3>AI & Automation Strategy</h3>
-            <p>We design AI-powered systems to automate critical operations — across mobility, logistics, infrastructure, and digital public services — ensuring scalability, reliability, and long-term impact.</p>
-        </div>
-        <div class="service">
-           <h3>Integrated Software–Hardware Design</h3>
-            <p>We help clients align smart software with the right hardware — including sensors, edge devices, cloud platforms, and robotics — ensuring system cohesion and operational efficiency.</p>
-        </div>
-        <div class="service">
-            <h3>Validation Frameworks for Intelligent Systems</h3>
-            <p>We build independent testing strategies for AI-driven systems — supporting safety, reliability, and regulatory alignment in robotics, autonomy, and data platforms.</p>
-        </div>
-        <div class="service">
-            <h3>Smart Infrastructure & Operational Oversight</h3>
-            <p>We support the rollout of digital twins, control centres, and live dashboards — giving organisations visibility, traceability, and real-time performance control.</p>
-        </div>
-        <div class="service">
-            <h3>Policy Advisory & Procurement Strategy</h3>
-            <p>We advise public and private leaders on AI policy, technical procurement, and delivery — bridging the gap between innovation and institutional adoption.</p>
-        </div>
-    </section>
+    <main>
+        <section class="section" id="services">
+            <h2>What We Do</h2>
+            <div class="service">
+                <h3>AI & Automation Strategy</h3>
+                <p>We design AI-powered systems to automate critical operations — across mobility, logistics, infrastructure, and digital public services — ensuring scalability, reliability, and long-term impact.</p>
+            </div>
+            <div class="service">
+                <h3>Integrated Software–Hardware Design</h3>
+                <p>We help clients align smart software with the right hardware — including sensors, edge devices, cloud platforms, and robotics — ensuring system cohesion and operational efficiency.</p>
+            </div>
+            <div class="service">
+                <h3>Validation Frameworks for Intelligent Systems</h3>
+                <p>We build independent testing strategies for AI-driven systems — supporting safety, reliability, and regulatory alignment in robotics, autonomy, and data platforms.</p>
+            </div>
+            <div class="service">
+                <h3>Smart Infrastructure & Operational Oversight</h3>
+                <p>We support the rollout of digital twins, control centres, and live dashboards — giving organisations visibility, traceability, and real-time performance control.</p>
+            </div>
+            <div class="service">
+                <h3>Policy Advisory & Procurement Strategy</h3>
+                <p>We advise public and private leaders on AI policy, technical procurement, and delivery — bridging the gap between innovation and institutional adoption.</p>
+            </div>
+        </section>
 
-    <section class="section" id="about">
-        <h2>Who We Are</h2>
-        <div class="about">
-            <p>ASAL Labs is an independent advisory firm led by engineers and scientists, focused on autonomy, AI validation, and intelligent infrastructure. We help clients design, test, and scale complex systems — with clarity, confidence, and technical depth.</p>
-            <p>We work from first principles to provide vendor-neutral, execution-focused guidance across both public and private sectors.</p>
-            <p>We exist to make autonomy practical — and to help ambitious teams deliver it responsibly, at scale.</p>
-        </div>
-    </section>
+        <section class="section" id="about">
+            <h2>Who We Are</h2>
+            <div class="about">
+                <p>ASAL Labs is an independent advisory firm led by engineers and scientists, focused on autonomy, AI validation, and intelligent infrastructure. We help clients design, test, and scale complex systems — with clarity, confidence, and technical depth.</p>
+                <p>We work from first principles to provide vendor-neutral, execution-focused guidance across both public and private sectors.</p>
+                <p>We exist to make autonomy practical — and to help ambitious teams deliver it responsibly, at scale.</p>
+            </div>
+        </section>
 
-    <section class="section cta">
-        <h2>Let’s Work Together</h2>
-        <p>Interested in working with ASAL Labs?</p>
-        <a href="mailto:contact@asallabs.tech">Get in Touch</a>
-    </section>
+        <section class="section cta" id="contact-cta">
+            <h2>Let’s Work Together</h2>
+            <p>Interested in working with ASAL Labs? We're ready to help you navigate the complexities of autonomy and AI.</p>
+            <a href="mailto:contact@asallabs.tech">Get in Touch</a>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 ASAL Labs. All rights reserved.</p>
