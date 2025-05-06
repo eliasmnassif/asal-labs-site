@@ -17,7 +17,6 @@
             --text-light: #566573; /* For muted text, still readable */
             --border-color: #D5DBDB;
             --shadow-color: rgba(44, 62, 80, 0.15); /* Softer shadow color */
-            /* Updated focus ring to a brighter version of the secondary accent blue */
             --focus-ring: #7CC5F0; /* Brighter blue for better focus visibility and palette cohesion */
         }
 
@@ -62,22 +61,37 @@
             to { transform: translateY(0); opacity: 1;}
         }
 
-        /* Styling for the logo image in the header */
-        header img {
-            height: 110px;
+        /* Styling for the SVG logo container in the header */
+        .logo-container { /* Added a container for the SVG for easier styling */
+            width: 110px;  /* Same as img height before */
+            height: 110px; /* Same as img height before */
             margin-bottom: 1.25rem;
             border-radius: 50%; /* Circular logo for a modern touch */
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow for logo */
-            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother ease for transform */
+            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
             border: 3px solid var(--bg-card); /* White border around logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-card); /* Background for the SVG container */
+            overflow: hidden; /* Ensures SVG stays within circle if it's too large */
         }
 
-        /* Hover and focus states for the logo */
-        header img:hover, header img:focus-visible {
+        .logo-container svg {
+            width: 70%; /* Adjust size of SVG within the circle */
+            height: auto;
+            display: block;
+        }
+
+
+        /* Hover and focus states for the logo container */
+        .logo-container:hover, .logo-container:focus-visible {
             transform: scale(1.08) rotate(5deg); /* Playful hover effect */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Slightly enhanced shadow */
             outline: 2px solid var(--focus-ring); /* Focus indicator for accessibility */
             outline-offset: 3px;
         }
+
 
         /* Styling for the main heading (H1) in the header */
         header h1 {
@@ -314,12 +328,13 @@
             .service h3 { font-size: 1.25rem; }
             .cta h2 { font-size: 1.7rem; }
             .cta a { padding: 0.8rem 2rem; font-size: 1rem; }
+            .logo-container { width: 100px; height: 100px; } /* Adjust logo size for tablet */
         }
 
         /* For smaller mobile devices */
         @media (max-width: 600px) {
             header { padding: 2rem 1rem 1.5rem; }
-            header img { height: 90px; }
+            .logo-container { width: 90px; height: 90px; } /* Adjust logo size for mobile */
             header h1 { font-size: 2rem; }
             .tagline { font-size: 0.9rem; }
 
@@ -344,7 +359,13 @@
 </head>
 <body>
     <header>
-        <img src="https://placehold.co/110x110/FFFFFF/1A5276?text=ASAL" alt="ASAL Labs Logo" />
+        <div class="logo-container" aria-label="ASAL Labs Logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="var(--primary-accent)">
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="55" font-weight="800" fill="var(--primary-accent)">
+                    AL
+                </text>
+            </svg>
+        </div>
         <h1>ASAL Labs</h1>
         <p class="tagline">Autonomy Systems Advisory Labs</p>
     </header>
